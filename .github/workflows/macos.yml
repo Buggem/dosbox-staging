@@ -69,13 +69,13 @@ jobs:
       - name: Build release
         run: |
           set -xo pipefail
-          cmake --preset release-macos-${{ matrix.conf.arch }}
-          cmake --build --preset release-macos-${{ matrix.conf.arch }} 2>&1 | tee build.log
+          cmake --preset debug-macos
+          cmake --build --preset debug-macos 2>&1 | tee build.log
 
       - name: Run tests
         run: |
           set -xo pipefail
-          ctest --preset release-macos-${{ matrix.conf.arch }} 2>&1 | tee tests.log
+          ctest --preset debug-macos 2>&1 | tee tests.log
 
       - name: Dump workspace contents
         run: find $RUNNER_WORKSPACE
