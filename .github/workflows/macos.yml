@@ -146,7 +146,7 @@ jobs:
           LIB_DIR="dist/DOSBox Staging.app/Contents/MacOS/lib"
           mkdir "$LIB_DIR"
           cp vcpkg-deps/release/* "$LIB_DIR"
-
+          #e
 
       - name:  Inject Nuked-SC55-CLAP plugin
         run: |
